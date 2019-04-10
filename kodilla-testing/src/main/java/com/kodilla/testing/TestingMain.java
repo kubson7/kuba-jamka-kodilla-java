@@ -17,7 +17,13 @@ public class TestingMain {
         // test Calculator
         Calculator calculate = new Calculator();
 
-        System.out.println(calculate.Add(7,8));
-        System.out.println(calculate.Subtrack(7,8));
+        int add = calculate.Add(10,1);
+        int subtract = calculate.Subtrack(5,5);
+
+        if ((add == 11)&&(subtract == 0)) {
+            System.out.println("OK");
+        } else {
+            System.out.println("Error !!");
+        }
     }
 }
