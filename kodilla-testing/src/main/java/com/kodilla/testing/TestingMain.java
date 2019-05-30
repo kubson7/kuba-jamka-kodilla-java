@@ -19,9 +19,13 @@ public class TestingMain {
         System.out.println("Test - drugi test jednostkowy prostego kalkulatora");
 
         Calculator calculator = new Calculator();
-        int resume = calculator.add(44,11);
-        System.out.println(resume);
-        int resume2 = calculator.subtract(44,11);
-        System.out.println(resume2);
+        int result1 = calculator.add(44,11);
+        int result2 = calculator.subtract(44,11);
+        if ((result1 == 55) && (result2 == 33)) {
+            System.out.println("Test OK");
+        } else {
+            System.out.println("Error!");
+        }
+
     }
 }
