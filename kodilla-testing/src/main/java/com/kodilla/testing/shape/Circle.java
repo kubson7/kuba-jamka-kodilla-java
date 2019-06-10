@@ -1,21 +1,21 @@
 package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
-    String shapeName;
-    int field;
 
-    public Circle(String shapeName, int field) {
-        this.shapeName = shapeName;
-        this.field = field;
+    int r;
+
+    public Circle(int r) {
+        this.r = r;
     }
 
     @Override
     public String getShapeName() {
-        return shapeName;
+        return "circle";
     }
 
     @Override
-    public int getField() {
-        return field;
+    public double getField() {
+        return (r*r*3.14);
     }
+
 }

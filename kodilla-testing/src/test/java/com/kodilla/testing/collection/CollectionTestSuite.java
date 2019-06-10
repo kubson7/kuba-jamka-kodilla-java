@@ -23,6 +23,7 @@ public class CollectionTestSuite {
     public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
@@ -51,7 +52,7 @@ public class CollectionTestSuite {
         //Then
         for (int oddNumbers : testList){
             if (oddNumbers%2 !=0){
-                System.out.println("Nieparzyste elementy:" + oddNumbers );
+                System.out.println("Nieparzyste elementy:" + testList);
             }
         }
 

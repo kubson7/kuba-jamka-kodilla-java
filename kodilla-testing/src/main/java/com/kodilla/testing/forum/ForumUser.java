@@ -25,6 +25,7 @@ public class ForumUser {
     }
 
     public int getPostsQuantity(){
+
         return posts.size();
     }
 
