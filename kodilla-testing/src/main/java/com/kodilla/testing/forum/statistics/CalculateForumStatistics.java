@@ -18,9 +18,22 @@ public class CalculateForumStatistics {
         userQuantity = statistics.userNames().size();
         postsQuantity = statistics.postCount();
         commentsQuantity = statistics.commentsCount();
-        averagePostsPerUser = postsQuantity/userQuantity;
-        averageCommentsPerUser = commentsQuantity/userQuantity;
-        averageCommentsPerPost = commentsQuantity/postsQuantity;
+
+        if (userQuantity == 0){
+            averagePostsPerUser = 0;
+            averageCommentsPerUser = 0;
+        } else {
+            averagePostsPerUser = (double) postsQuantity/userQuantity;
+            averageCommentsPerUser = (double) commentsQuantity/userQuantity;
+        }
+
+        if (postsQuantity == 0){
+            averageCommentsPerPost = 0;
+        } else {
+            averageCommentsPerPost = (double) commentsQuantity/postsQuantity;
+        }
+
+
     }
 
     public int getUserQuantity() {
