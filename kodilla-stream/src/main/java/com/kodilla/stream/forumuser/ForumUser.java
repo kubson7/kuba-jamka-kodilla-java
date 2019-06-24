@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public final class ForumUser {
     private final int ID;
     private final String nameUser;
-    private final char sex;
+    private final Sex sex;
     private final LocalDate birthday;
     private final int publishedPosts;
 
-    public ForumUser(int ID, String nameUser, char sex, LocalDate birthday, int publishedPosts) {
+    public ForumUser(int ID, String nameUser, Sex sex, LocalDate birthday, int publishedPosts) {
         this.ID = ID;
         this.nameUser = nameUser;
         this.sex = sex;
@@ -25,7 +25,7 @@ public final class ForumUser {
         return nameUser;
     }
 
-    public char getSex() {
+    public Sex getSex() {
         return sex;
     }
 
