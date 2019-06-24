@@ -93,8 +93,8 @@ public class BookDirectoryTestSuite {
     //<------------------------------------------------------------------------------------------------------>
 
     @Test
-    public void testListBooksInHandsOf() {
-        // gdy użytkownik nie ma wypożyczonych żadnych książek
+    public void shouldReturnNoBooksIfUserHasNotBookedBooks() {
+
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
@@ -109,8 +109,8 @@ public class BookDirectoryTestSuite {
 
     }
     @Test
-    public void testListBooksInHandsOf1() {
-        // gdy użytkownik nie ma wypożyczonych żadnych książek
+    public void shouldReturnOneBooksIfUserHasBorrowedOneBook() {
+
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
@@ -125,8 +125,8 @@ public class BookDirectoryTestSuite {
 
     }
     @Test
-    public void testListBooksInHandsOfMoreThan5() {
-        // gdy ma wypożyczonych 5 książek
+    public void shouldReturnFiveBooksIfUserHasBorrowedFiveBooks() {
+        //
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
