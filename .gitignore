@@ -17,6 +17,8 @@ HELP.md
 *.iws
 *.iml
 *.ipr
+
+ out/
 /out/
 **/out/
 **/build/
