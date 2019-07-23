@@ -1,6 +1,7 @@
 package com.kodilla.exception.test;
 
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class FlightSearch {
 
@@ -10,13 +11,25 @@ public class FlightSearch {
         this.airportsName = airportsName;
     }
 
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
 
-        if (airportsName.containsKey(flight.getArrivalAirport())) {
-            if (airportsName.get(flight.getArrivalAirport())) {
-                System.out.println("Lot dostępny");
-            } else System.out.println("Lotnisko niedostępne");
-        } else throw new RouteNotFoundException();
+        boolean firstAirportPresent = airportsName.entrySet().stream()
+                .anyMatch(entry -> entry.getKey().equals(flight.getDepartureAirport()));
+        System.out.println(firstAirportPresent);
+        boolean secondAirportPreset = airportsName.entrySet().stream()
+                .anyMatch(entry -> entry.getKey().equals(flight.getArrivalAirport()));
+        System.out.println(secondAirportPreset);
+
+        if (firstAirportPresent && secondAirportPreset) {
+            return true;
+        } else {
+            throw new RouteNotFoundException();
+        }
+
+//
+//
+
+
     }
 }
 
