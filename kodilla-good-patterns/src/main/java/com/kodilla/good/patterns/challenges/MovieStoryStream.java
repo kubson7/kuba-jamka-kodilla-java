@@ -9,7 +9,7 @@ public class MovieStoryStream {
         MovieStory movieStory = new MovieStory();
         String films = movieStory.getMovies().entrySet().stream()
                 .flatMap(s -> s.getValue().stream())
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.joining("!"));
         System.out.println(films);
 
     }
