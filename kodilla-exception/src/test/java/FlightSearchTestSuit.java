@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class FlightSearchTestSuit {
     @Test
-    public void testSearchingFlight() {
+    public void testestOfTwoAvailableAirports() {
         //Given
         Flight flight1 = new Flight("Lotnisko 1", "Lotnisko 6");
         Flight flight2 = new Flight("Lotnisko 2", "Lotnisko 7");
@@ -27,11 +27,34 @@ public class FlightSearchTestSuit {
         airportsName.put("Lotnisko 5", true);
         airportsName.put("Lotnisko 4", true);
 
+        //When
         FlightSearch flightSearch = new FlightSearch(airportsName);
         try {
             //Then
-            Assert.assertEquals(false, flightSearch.findFlight(flight4));
+            Assert.assertEquals(true, flightSearch.findFlight(flight4));
         } catch (RouteNotFoundException r){};
+    }
 
+    @Test
+    public void testestOfOneAvailableAirports() {
+        //Given
+        Flight flight1 = new Flight("Lotnisko 1", "Lotnisko 6");
+        Flight flight2 = new Flight("Lotnisko 2", "Lotnisko 7");
+        Flight flight3 = new Flight("Lotnisko 3", "Lotnisko 8");
+        Flight flight4 = new Flight("Lotnisko 4", "Lotnisko 9");
+        Flight flight5 = new Flight("Lotnisko 5", "Lotnisko 10");
+
+        Map<String, Boolean> airportsName = new HashMap<>();
+
+
+        airportsName.put("Lotnisko 5", false);
+        airportsName.put("Lotnisko 10", true);
+
+        //When
+        FlightSearch flightSearch = new FlightSearch(airportsName);
+        try {
+            //Then
+            Assert.assertEquals(false, flightSearch.findFlight(flight5));
+        } catch (RouteNotFoundException r){};
     }
 }

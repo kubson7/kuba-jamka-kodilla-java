@@ -14,10 +14,15 @@ public class FlightSearch {
     public boolean findFlight(Flight flight) throws RouteNotFoundException {
 
         boolean firstAirportPresent = airportsName.entrySet().stream()
-                .anyMatch(entry -> entry.getKey().equals(flight.getDepartureAirport()));
+                .filter(entry -> entry.getKey().equals(flight.getDepartureAirport()))
+                .filter(entry -> entry.getValue())
+                .findAny().isPresent();
         System.out.println(firstAirportPresent);
+
         boolean secondAirportPreset = airportsName.entrySet().stream()
-                .anyMatch(entry -> entry.getKey().equals(flight.getArrivalAirport()));
+                .filter(entry -> entry.getKey().equals(flight.getArrivalAirport()))
+                .filter(entry -> entry.getValue())
+                .findAny().isPresent();
         System.out.println(secondAirportPreset);
 
         if (firstAirportPresent && secondAirportPreset) {
