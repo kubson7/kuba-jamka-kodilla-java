@@ -5,9 +5,9 @@ public class Application {
         OrderRequestRetriver orderRequestRetriver = new OrderRequestRetriver();
         OrderRequest orderRequest = orderRequestRetriver.retrieve();
 
-        //NIE SKONCZONE
-        //należy stworzyć klasy, które przekażemy jako parametry ??
-        ProductOrderService productOrderService = new ProductOrderService();
+
+
+        ProductOrderService productOrderService = new ProductOrderService(new MailServiceProduct(), new ProductOrder(), new ProductOrderRepository());
         productOrderService.process(orderRequest);
     }
 }

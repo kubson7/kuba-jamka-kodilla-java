@@ -15,11 +15,11 @@ public class ProductOrderService {
     }
 
     public OrderDto process(final OrderRequest rentRequest) {
-        boolean isRented = orderService.order(rentRequest.getUser(), rentRequest.getOrderedOnTheDay(), rentRequest.getProductName());
+        boolean isRented = orderService.createOrder(rentRequest.getUser(), rentRequest.getOrderedOnTheDay(), rentRequest.getProductName());
 
         if(isRented) {
             informationService.inform(rentRequest.getUser());
-            orderRepository.createOrder(rentRequest.getUser(), rentRequest.getOrderedOnTheDay(), rentRequest.getProductName());
+            orderRepository.orderToRepo(rentRequest.getUser(), rentRequest.getOrderedOnTheDay(), rentRequest.getProductName());
             return new OrderDto(rentRequest.getUser(), true);
         } else {
             return new OrderDto(rentRequest.getUser(), false);
