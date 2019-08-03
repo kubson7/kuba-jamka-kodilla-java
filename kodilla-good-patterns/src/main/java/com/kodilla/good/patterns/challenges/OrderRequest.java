@@ -13,8 +13,16 @@ public class OrderRequest {
         this.productName = productName;
     }
 
-    public User getUser() {return user;}
-    public LocalDateTime getOrderedOnTheDay(){return orderedOnTheDay;}
-    public String getProductName(){return productName;}
+    public User getUser() {
+        return user;
+    }
+
+    public LocalDateTime getOrderedOnTheDay() {
+        return orderedOnTheDay;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
 
 }

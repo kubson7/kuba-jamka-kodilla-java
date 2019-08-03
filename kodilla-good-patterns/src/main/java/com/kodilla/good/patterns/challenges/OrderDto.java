@@ -8,6 +8,12 @@ public class OrderDto {
         this.user = user;
         this.isRented = isRented;
     }
-    public User getUser() { return user;}
-    public boolean isRented() { return isRented;}
+
+    public User getUser() {
+        return user;
+    }
+
+    public boolean isRented() {
+        return isRented;
+    }
 }
